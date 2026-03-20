@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div style="display: flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;">
+        <h1>Simple Calculator</h1>
+
+        <div class="calculator">
+            <div id="display">0</div>
+            <div class="calculator-componenets">
+
+                <div id="clear" onclick="clearDisplay()">C</div>
+                <div id="1" onclick="buttonClick(1)">1</div>
+                <div id="2" onclick="buttonClick(2)">2</div>
+                <div id="3" onclick="buttonClick(3)">3</div>
+
+                <div id="4" onclick="buttonClick(4)">4</div>
+                <div id="5" onclick="buttonClick(5)">5</div>
+                <div id="6" onclick="buttonClick(6)">6</div>
+                <div id="7" onclick="buttonClick(7)">7</div>
+
+                <div id="8" onclick="buttonClick(8)">8</div>
+                <div id="9" onclick="buttonClick(9)">9</div>
+                <div id="0" onclick="buttonClick(0)">0</div>
+                <div id="." onclick="buttonClick('.')">.</div>
+
+                <div id="+" onclick="buttonClick('+')">+</div>
+                <div id="-" onclick="buttonClick('-')">-</div>
+                <div id="*" onclick="buttonClick('*')">*</div>
+                <div id="/" onclick="buttonClick('/')">/</div>
+
+                <div id="%" onclick="buttonClick('%')">%</div>
+                <div id="**" onclick="buttonClick('**')">^</div>
+                <div onclick="calculateResult()">=</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
