@@ -29,3 +29,6 @@ arrow functions with parameter
 conditonal statement
 
 ## SCREENSHOTS
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3644795d-3e69-455e-9f4a-237c59f06564" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a9d664b6-92c2-4aa3-bc19-1d46f602284a" />
+
