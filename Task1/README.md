@@ -1,4 +1,4 @@
-## TASK2
+## TASK1
 Create a simple to-do list app where users can add new tasks, mark them as complete, and remove them.
 
 ## REQUIREMENTS
