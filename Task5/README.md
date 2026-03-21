@@ -32,5 +32,10 @@ conditonal statement
 forEach loop
 
 ## SCREENSHOTS
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/10430528-14ba-4983-b6ea-2c11b602c417" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5257414c-f21f-4ab0-b802-3a6bd3284de4" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/449657d2-3a0a-414d-ac33-2974dcff61eb" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/98c3ba79-0832-49f1-8303-7834079316dd" />
+
 
 
