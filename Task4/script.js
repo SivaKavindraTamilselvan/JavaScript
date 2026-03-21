@@ -1,8 +1,14 @@
 async function search() {
     let city = document.getElementById("city").value;
+    if (city === "") {
+        alert("Enter the city");
+        return;
+    }
     let API = "bbd7fc74b3573518f8876157e7d0ec5e";
     let report = document.getElementById("report");
-
+    let e = document.getElementById("error");
+    report.innerHTML = "";
+    e.innerHTML = "";
     try {
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}`);
         let data = await response.json();
@@ -17,15 +23,17 @@ async function search() {
 
         weatherDiv.textContent = `Weather : ${weather}`;
         humidityDiv.textContent = `Humidity : ${humidity}`;
-        tempDiv.textContent=`Temperature :${temp}`;
+        tempDiv.textContent = `Temperature :${temp}`;
+
 
         report.appendChild(weatherDiv);
         report.appendChild(humidityDiv);
         report.appendChild(tempDiv);
     }
     catch (error) {
+        let p = document.createElement("p");
+        p.innerText = error;
+        e.appendChild(p);
         console.error(error);
     }
-
-
 }
