@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="chat-window">
+        <div class="container">
+            <div id="chat">
+                <div  id="input-box" style="display: flex;gap:20px">
+                    <input type="text" placeholder="Enter your message" id="input" />
+                    <button id="submit" onclick="sendMessage()">Submit</button>
+                </div>
+                <div id="chatbox"></div>
+            </div>
+            <div id="imge">
+                <div id="image">
+                    <input type="file" placeholder="Add the Image" id="img" />
+                    <button onclick="checkImage()" id="img-btn">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
