@@ -41,6 +41,9 @@ drop event
 dragleave event
 
 ## SCREENSHOTS
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/17a555e5-8918-446e-a6e3-59a18de7a237" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/59c0a4bc-ed6a-4e51-8596-460796712d51" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/38556192-c9a5-42a1-bd59-5db6fef7d970" />
 
 
 
