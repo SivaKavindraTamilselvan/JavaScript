@@ -1,0 +1,93 @@
+.hero-section {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    animation: caurosal 12s infinite;
+}
+
+@keyframes caurosal {
+    0% {
+        background-image: url("../assets/tiger.jpg");
+    }
+
+    33% {
+        background-image: url("../assets/zebra.jpg");
+    }
+
+    66% {
+        background-image: url("../assets/hero.jpg");
+    }
+
+    100% {
+        background-image: url("../assets/elephant.jpg");
+    }
+}
+
+.hero-section-content {
+    padding: 10%;
+    color: white;
+}
+
+.popup-content {
+    position: relative;
+    display: none;
+    text-align: center;
+}
+
+.popup-inner-content{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.popup-content:target {
+    display: flex;
+    color: black;
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    box-shadow: 4px 4px 4px green;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+@media screen and (max-width:1024px) and (min-width:825px){
+    .hero-section {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        background-image: none;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        animation: none;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:820px) {
+    .hero-section {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        background-image: none;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        animation: nones;
+    }
+}
