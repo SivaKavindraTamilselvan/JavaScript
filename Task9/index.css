@@ -1,0 +1,22 @@
+.image{
+    width: 400px;
+    height: auto;
+}
+#image-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+#loading{
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 10px;
+}
+.content{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
