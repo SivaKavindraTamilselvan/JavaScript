@@ -26,3 +26,7 @@ document.getElementById
 style
 
 ## SCREENSHOTS
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/46c1f1e8-3cae-46a5-a73a-4c3265d2887e" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/00bd6977-5849-451d-bb6a-6328c6725254" />
+
