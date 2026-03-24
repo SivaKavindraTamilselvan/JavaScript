@@ -1,10 +1,10 @@
 ## TASK8
-Build a basic SPA that navigates between different views without reloading the page.
+Create a web page that loads additional content as the user scrolls toward the bottom.
 
 ## REQUIREMENTS
-- Implement hash-based routing by listening to the `window.onhashchange` event.
-- Dynamically load different content sections based on the current URL hash.
-- Maintain a consistent UI and state across route changes.
+- Detect when the user is near the bottom of the page using the scroll event.
+- Use the Fetch API to load more data asynchronously (simulate with dummy data or an API).
+- Append new content to the page while ensuring smooth performance and user experience.
 
 ## TECHNOLOGIES USED
 HTML
@@ -12,16 +12,17 @@ CSS
 JS
 
 ## FEATURES
-Fact Content
-Aquatic Content
-Teresstrial Content
-Home Content
+Image Gallery
+Collected the data from external API url
 
 ## JS USED
 
-windows.onhashChange
-document.getElementById
+observer
+IntersectionObserver
 async
 await
+callback
+document.getElementById
+style
 
 ## SCREENSHOTS
