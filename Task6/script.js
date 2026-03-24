@@ -73,7 +73,7 @@ const completeTask = (li) => {
     }
 }
 
-let b=null;
+let b = null;
 const addDragEvents = (item) => {
 
     item.addEventListener("dragstart", () => {
@@ -107,7 +107,8 @@ const addDragEvents = (item) => {
 
             if (e < f) {
                 c.insertBefore(b, item.nextSibling);
-            } else {
+            }
+            else {
                 c.insertBefore(b, item);
             }
         }
