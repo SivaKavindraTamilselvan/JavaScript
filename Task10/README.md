@@ -25,12 +25,6 @@ Cart Page
 
 ## JS USED
 
-observer
-IntersectionObserver
-async
-await
-callback
-document.getElementById
-style
+All the Task Concepts where used
 
 ## SCREENSHOTS
