@@ -36,39 +36,23 @@ const animalsList = [
         content2: "The cheetah was first scientifically described in the late 18th century. Four subspecies are recognised today that are native to Africa and central Iran. An African subspecies was introduced to India in 2022. It is now distributed mainly in small, fragmented populations in northwestern, eastern and southern Africa and central Iran. It lives in a variety of habitats such as savannahs in the Serengeti, arid mountain ranges in the Sahara, and hilly desert terrain."
     }
 ];
+let a = document.getElementById("popup");
 const display = (id) => {
 
     let animalId = animalsList.find((item) => id === item.animal);
     //alert(animalId);
-    let a = document.getElementById("popup");
-    a.innerHTML = "";
     a.classList.add("pop");
-    let section = document.createElement("div");
 
-    let imagae = document.createElement("img");
+    let imagae = document.getElementById("image");
     imagae.src = animalId.image;
 
-    let innerContent = document.createElement("p");
+    let innerContent = document.getElementById("innercontent");
     innerContent.textContent = animalId.content;
 
-    let secondInnerContent = document.createElement("p");
+    let secondInnerContent = document.getElementById("secondcontent");
     secondInnerContent.textContent = animalId.content2;
+}
 
-    let icon = document.createElement("span");
-    icon.classList.add("material-symbols-outlined");
-    icon.textContent = "close";
-    icon.classList.add("close-btn");
-
-    section.appendChild(icon);
-    section.appendChild(imagae);
-    section.appendChild(innerContent);
-    section.appendChild(secondInnerContent);
-
-    a.appendChild(section);
-
-    icon.addEventListener("click", () => {
-        icon.classList.remove("close-btn");
-        a.classList.remove("pop");
-        a.innerHTML = "";
-    })
+const closePopup = () => {
+    a.classList.remove("pop");
 }
