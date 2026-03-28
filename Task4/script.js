@@ -4,13 +4,13 @@ async function search() {
         alert("Enter the city");
         return;
     }
-    let API = "bbd7fc74b3573518f8876157e7d0ec5e";
+    let API = API_KEY;
     let report = document.getElementById("report");
     let e = document.getElementById("error");
     report.innerHTML = "";
     e.innerHTML = "";
     try {
-        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}`);
+        let response = await fetch(`${URL}?q=${city}&appid=${API}`);
         let data = await response.json();
 
         let weatherDiv = document.createElement("p");
