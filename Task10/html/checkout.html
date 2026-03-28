@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body style="display: flex;flex-direction: column;justify-content:center;align-items:center">
+    <div class="chekout-summary">
+        <div class="checkout-div">
+            <p>Choose Adress</p>
+            <div id="address"></div>
+            <button onclick="displayAddress()" class="add">Add New Address</button>
+            <div class="addressinput" id="popup">
+                <div class="popup-content">
+                    <h1>Enter The Details</h1>
+                    <textarea placeholder="Enter Your Adress" id="newAddress"></textarea>
+                    <button class="addressButton" onclick="addAddress()">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-div">
+            <p>Choose Payement Option</p>
+            <div id="payment"></div>
+        </div>
+    </div>
+    <button onclick="placeOrder()" class="add">Place Order</button>
+</body>
+
+</html>

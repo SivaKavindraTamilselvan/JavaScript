@@ -1,0 +1,25 @@
+.slide-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+}
+
+.slides {
+    display: flex;
+    gap: 12px;
+    animation: slide-animation 12s infinite linear;
+}
+
+.slide-list::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes slide-animation {
+    from {
+        translate: 0;
+    }
+
+    to {
+        translate: -100%;
+    }
+}

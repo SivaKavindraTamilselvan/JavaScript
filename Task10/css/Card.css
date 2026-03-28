@@ -1,0 +1,135 @@
+.card-section {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.div {
+    border: 2px solid black;
+    box-shadow: 2px 2px 4px black;
+    padding: 10px;
+    gap: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card-section div img {
+    height: 200px;
+}
+
+.cart-button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.cost {
+    font-weight: bold;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: medium;
+    padding: 2px;
+}
+
+.sizeDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.sizeDiv button {
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.sizeDiv button.size {
+    background-color: green;
+    color: white;
+}
+
+.cart-page {
+    display: flex;
+    justify-content: space-around;
+}
+
+.order-summary {
+    margin-top: 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.order-heading {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+}
+
+
+.summary-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.total-cost {
+    text-align: end;
+    padding: 10px;
+}
+
+.checkout-button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.checkout-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@media screen and (min-width:0px) and (max-width:600px) {
+    .card-section {
+        grid-template-columns: auto;
+    }
+
+    .cart-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+@media screen and (max-width:1024px) and (min-width:600px) {
+    .card-section {
+        grid-template-columns: auto auto;
+    }
+}

@@ -1,0 +1,42 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+main {
+    margin-top: 7%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+
+input {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10%;
+}

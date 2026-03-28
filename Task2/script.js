@@ -1,5 +1,12 @@
 let a = document.getElementById("display");
-
+async function calculateResult() {
+    try {
+        a.innerText = eval(a.innerText);
+    }
+    catch(error){
+        a.innerText = "Error";
+    }
+}
 const buttonClick = (content) => {
     if (a.innerText === "0") {
         a.innerText = content;
@@ -7,10 +14,6 @@ const buttonClick = (content) => {
     else {
         a.innerText = a.innerText + content;
     }
-}
-
-const calculateResult = () => {
-    a.innerText = eval(a.innerText);
 }
 
 const clearDisplay = () => {

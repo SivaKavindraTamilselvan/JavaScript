@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: medium;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.navbar{
+    box-shadow: 2px 2px 2px black;
+    padding: 15px;
+}
+
+.navbar ul li{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover{
+    color: green;
+}

@@ -2,7 +2,9 @@ async function search() {
     let city = document.getElementById("city").value;
     let API = API_KEY;
     let report = document.getElementById("report");
-
+    let e = document.getElementById("error");
+    report.innerHTML = "";
+    e.innerHTML = "";
     try {
         let response = await fetch(`${URL}?q=${city}&appid=${API}`);
         let data = await response.json();
@@ -17,15 +19,17 @@ async function search() {
 
         weatherDiv.textContent = `Weather : ${weather}`;
         humidityDiv.textContent = `Humidity : ${humidity}`;
-        tempDiv.textContent=`Temperature :${temp}`;
+        tempDiv.textContent = `Temperature :${temp}`;
+
 
         report.appendChild(weatherDiv);
         report.appendChild(humidityDiv);
         report.appendChild(tempDiv);
     }
     catch (error) {
+        let p = document.createElement("p");
+        p.innerText = error;
+        e.appendChild(p);
         console.error(error);
     }
-
-
 }

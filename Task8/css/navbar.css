@@ -1,0 +1,95 @@
+.header {
+    position: fixed;
+    z-index:2;
+    top: 0;
+    width: 100vw;
+}
+
+.title-component {
+    background-color: black;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.navbar {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 2px black;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+.navbar-list {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-list li a:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.submenu {
+    position: absolute;
+    display: none;
+    background-color: white;
+    color: black;
+    border: gray;
+    list-style: none;
+    box-shadow: 2px 2px 2px green;
+    padding: 20px;
+    border: 2px solid green;
+}
+
+.navbar-list li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    border-bottom: 2px solid green;
+    padding: 5px;
+}
+
+@media screen and (min-width:0px) and (max-width:820px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .navbar-list {
+        display: none;
+    }
+
+    #menu-toggle:checked+.hamburger+.navbar-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0%;
+    }
+    .submenu {
+        display: none !important;
+    }
+
+    /* Remove hover effect */
+    .navbar-list li:hover .submenu {
+        display: none;
+    }
+}
