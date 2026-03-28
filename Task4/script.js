@@ -1,5 +1,9 @@
 async function search() {
     let city = document.getElementById("city").value;
+    if(city===""){
+        alert("Enter City");
+        return;
+    }
     let API = API_KEY;
     let report = document.getElementById("report");
     let e = document.getElementById("error");
