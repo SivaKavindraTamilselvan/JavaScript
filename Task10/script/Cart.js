@@ -1,73 +1,65 @@
-window.loadCart = function () {
-    let cart = document.getElementById("cart");
+window.addToCart = async function (itemToAdd, size, Quantity) {
+    let cartItems = await loadData("cart");
+    let checkExists = cartItems.find(item => item.heading === itemToAdd.heading);
+    if (!checkExists) {
+        let finalItem = {
+            ...itemToAdd,
+            selected: size,
+            quantity: Quantity
+        }
+        cartItems.push(finalItem);
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+        alert(ALERT_ADDED_TO_CART);
+    }
+    else {
+        alert(ALERT_EXISTING_ITEM);
+    }
+}
+
+const removeFromCart = (itemToDelete) => {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.innerHTML = "";
-    cartItems.forEach((item) => {
-        let div = document.createElement("div");
-        div.className = "div";
+    cartItems = cartItems.filter(item => item.heading !== itemToDelete.heading);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    alert(ALERT_ITEM_REMOVED);
+    loadCardDetails("cart");
+    CartSummary("cart");
+}
 
-        let image = document.createElement("img");
-        image.src = item.image;
-        div.appendChild(image);
-
-        let heading = document.createElement("p");
-        heading.textContent = item.heading;
-        heading.className = "heading";
-        div.appendChild(heading);
-
-        let description = document.createElement("p");
-        description.textContent = item.description;
-        div.appendChild(description);
-
-        let cost = document.createElement("p");
-        cost.textContent = item.cost;
-        cost.className = "cost";
-        div.appendChild(cost);
-
-        let selectedSize = document.createElement("p");
-        selectedSize.textContent = `Size Selected : ${item.selected}`;
-        div.appendChild(selectedSize);
-
-        let button = document.createElement("button");
-        button.textContent = "Remove from Cart";
-        button.className = "cart-button";
-
-        div.appendChild(button);
-
-        cart.appendChild(div);
-
-        button.addEventListener("click", () => {
-            removeFromCart(item);
-        });
-    })
-
+window.CartSummary = async function () {
     let cartSummary = document.getElementById("cart-summary");
     let cartCost = 0;
 
+    let cartItems = await loadData("cart");
     cartSummary.innerHTML = "";
     cartItems.forEach((item) => {
-        let summaryDiv = document.createElement("div");
-        let title = document.createElement("p");
-        title.textContent = item.heading;
-        let c = document.createElement("p");
-        c.textContent = item.cost;
-        cartCost = cartCost + item.cost;
 
-        summaryDiv.className = "summary-div";
+        let summaryDiv = createComponent("div",SUMMARY_DIV_CLASS_NAME);
+        let title = createComponent("p","",item.heading);
+
+        let q = createComponent("p","",item.quantity);
+
+        let c = createComponent("p","",item.quantity*item.cost);
+
+        cartCost = cartCost + item.cost*item.quantity;
+
         summaryDiv.appendChild(title);
+        summaryDiv.appendChild(q);
         summaryDiv.appendChild(c);
 
         cartSummary.appendChild(summaryDiv);
     })
-    let total = document.createElement("p");
-    total.textContent = `${cartCost}`;
-    total.className = "total-cost";
+    let total = createComponent("p",TOTAT_COST_CLASS_NAME,cartCost);
 
-    let checkout = document.createElement("button");
-    checkout.textContent = "Proceed to checkout";
+    let gst = createComponent("p","","Gst - 18%");
 
-    checkout.className = "checkout-button";
+    let checkout = createComponent("button",CHECKOUT_BTN_CLASS_NAME,CHECKOUT_BTN_CONTENT);
+
     cartSummary.appendChild(total);
+    cartSummary.appendChild(gst);
+
+    let Gsttotal = createComponent("p",TOTAT_COST_CLASS_NAME,cartCost*GST);
+
+    cartSummary.appendChild(Gsttotal);
     cartSummary.appendChild(checkout);
 
     if (cartCost == 0) {
@@ -78,12 +70,4 @@ window.loadCart = function () {
             window.location.hash = "#checkout";
         });
     }
-}
-
-const removeFromCart = (itemToDelete) => {
-    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    cartItems = cartItems.filter(item => item.heading !== itemToDelete.heading);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    alert("Item removed from Cart");
-    loadCart();
 }

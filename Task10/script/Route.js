@@ -31,19 +31,20 @@ async function Route() {
         const data = await response.text();
         content.innerHTML = data;
         if (routes === "#women") {
-            loadWomen();
+            loadCardDetails("women");
         }
         if (routes === "#cart") {
-            loadCart();
+            loadCardDetails("cart");
+            CartSummary();
         }
         if (routes === "#men") {
-            loadMen();
+            loadCardDetails("men");
         }
         if (routes === "#checkout") {
             load();
         }
         if (routes === "#order") {
-            loadOrder();
+            loadCardDetails("order");
         }
     }
     catch (error) {

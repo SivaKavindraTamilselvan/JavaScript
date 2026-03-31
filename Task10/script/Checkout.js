@@ -1,15 +1,13 @@
 let selectedAddress = null;
 let selectedElement = null
 let selectedPayement = null;
-let s = null
+let s = null;
 window.load = function () {
     let address = document.getElementById("address");
     address.innerHTML = "";
     const list = JSON.parse(localStorage.getItem("addressList")) || [];
     list.forEach((item) => {
-        let p = document.createElement("p");
-        p.textContent = item;
-        p.className = "addressList";
+        let p = createComponent("p","addressLits",item);
         p.addEventListener("click", () => {
             selectedAddress = item;
             if (selectedElement) {
@@ -25,9 +23,7 @@ window.load = function () {
     let paymentContainer = document.getElementById("payment");
     const payment = ["Cash On Delivery", "Gpay", "PhonePe", "PayTm", "Credit/Debit Card"];
     payment.forEach((item) => {
-        let p = document.createElement("p");
-        p.textContent = item;
-        p.className = "addressList";
+        let p = createComponent("p","addressLits",item);
         p.addEventListener("click", () => {
             selectedPayement = item;
             if (s) {
@@ -58,15 +54,15 @@ const addAddress = () => {
     load();
 };
 
-const placeOrder = () => {
+async function placeOrder() {
     if (!selectedAddress) {
         alert("Enter The address");
     }
     if (!selectedPayement) {
         alert("Enter the Payement");
     }
-    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    let order = JSON.parse(localStorage.getItem("order")) || [];
+    let cartItems = await loadData("cart");
+    let order = await loadData("order");
     cartItems.forEach((item) => {
         let newOrder = {
             item: item,
@@ -79,6 +75,6 @@ const placeOrder = () => {
     });
     localStorage.setItem("order", JSON.stringify(order));
     localStorage.removeItem("cart");
-    alert("Order Placed Successfully");
+    alert(ALERT_ORDER_PLACED);
     window.location.hash = "#order";
 }

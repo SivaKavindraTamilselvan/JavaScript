@@ -114,6 +114,14 @@
     opacity: 0.6;
 }
 
+#filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin:10px;
+}
+
 @media screen and (min-width:0px) and (max-width:600px) {
     .card-section {
         grid-template-columns: auto;
