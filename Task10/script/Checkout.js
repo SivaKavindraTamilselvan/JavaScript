@@ -7,7 +7,7 @@ window.load = function () {
     address.innerHTML = "";
     const list = JSON.parse(localStorage.getItem("addressList")) || [];
     list.forEach((item) => {
-        let p = createComponent("p","addressLits",item);
+        let p = createComponent("p","addressList",item);
         p.addEventListener("click", () => {
             selectedAddress = item;
             if (selectedElement) {
@@ -23,7 +23,7 @@ window.load = function () {
     let paymentContainer = document.getElementById("payment");
     const payment = ["Cash On Delivery", "Gpay", "PhonePe", "PayTm", "Credit/Debit Card"];
     payment.forEach((item) => {
-        let p = createComponent("p","addressLits",item);
+        let p = createComponent("p","addressList",item);
         p.addEventListener("click", () => {
             selectedPayement = item;
             if (s) {
